@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hexa_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00102621146286391 -0.00508584464388768 -0.0188046052722118"
+        rpy="0 0 0" />
+      <mass
+        value="1.67990502595448" />
+      <inertia
+        ixx="0.00257193129712044"
+        ixy="3.55430051787009E-08"
+        ixz="1.6706892369537E-09"
+        iyy="0.0025903031252896"
+        iyz="6.41265575811204E-08"
+        izz="0.00467566709892528" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="255 114 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Propeller1">
+    <inertial>
+      <origin
+        xyz="-3.26474692807777E-07 0.00439680434131268 -1.53808227543184E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751257355648407" />
+      <inertia
+        ixx="1.74304413652826E-05"
+        ixy="1.49737996578977E-11"
+        ixz="-1.55537949568054E-06"
+        iyy="1.77025863093851E-05"
+        iyz="4.04498554041808E-11"
+        izz="3.33965232184549E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller1_j"
+    type="continuous">
+    <origin
+      xyz="-0.12757247787632 -0.220931255442771 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller2">
+    <inertial>
+      <origin
+        xyz="-3.28623572909414E-07 0.00439679150925019 -6.51437577161518E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751263614529959" />
+      <inertia
+        ixx="1.74309820571611E-05"
+        ixy="1.49424727304143E-11"
+        ixz="-1.55538106683582E-06"
+        iyy="1.77031266704762E-05"
+        iyz="2.91143150409736E-11"
+        izz="3.33965410387138E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller2_j"
+    type="continuous">
+    <origin
+      xyz="-0.255118318641588 1.5378943236248E-05 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller3">
+    <inertial>
+      <origin
+        xyz="-3.28267353771894E-07 0.00439679224022817 -6.12670876226629E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751263238021885" />
+      <inertia
+        ixx="1.74309591882528E-05"
+        ixy="1.49387152819401E-11"
+        ixz="-1.55538092886439E-06"
+        iyy="1.77031038068463E-05"
+        iyz="2.9487135387314E-11"
+        izz="3.33965407479089E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller3_j"
+    type="continuous">
+    <origin
+      xyz="-0.127545840765268 0.220946634386007 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller4">
+    <inertial>
+      <origin
+        xyz="-3.2850210893165E-07 0.0043968169140178 -6.51248902777679E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751252204498336" />
+      <inertia
+        ixx="1.7429921886232E-05"
+        ixy="1.49383513642947E-11"
+        ixz="-1.55537872725387E-06"
+        iyy="1.77020670481701E-05"
+        iyz="2.9107684248315E-11"
+        izz="3.33965010652423E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller4_j"
+    type="continuous">
+    <origin
+      xyz="0.127580369515376 0.220925411722318 0.0325079324936686"
+      rpy="1.5707963267949 0 0.0353318344323685" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller5">
+    <inertial>
+      <origin
+        xyz="-3.28623527057204E-07 0.0043967915092662 -6.51437324510765E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751263614541705" />
+      <inertia
+        ixx="1.74309820571806E-05"
+        ixy="1.49424749635846E-11"
+        ixz="-1.55538106684497E-06"
+        iyy="1.77031266704956E-05"
+        iyz="2.91143094346732E-11"
+        izz="3.33965410382781E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller5_j"
+    type="continuous">
+    <origin
+      xyz="0.255118318641588 -1.53789432341404E-05 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller5" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller6">
+    <inertial>
+      <origin
+        xyz="-3.28285385514659E-07 0.00439679222430978 -6.12759626705817E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.007512632349858" />
+      <inertia
+        ixx="1.74309591907559E-05"
+        ixy="1.49392924115752E-11"
+        ixz="-1.55538092682559E-06"
+        iyy="1.77031038090761E-05"
+        iyz="2.94877500956035E-11"
+        izz="3.33965406357289E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Propeller6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller6_j"
+    type="continuous">
+    <origin
+      xyz="0.12755 -0.22095 0.032508"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller6" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  
+  <!-- 
+    <link
+    name="Spur_gear">
+    <inertial>
+      <origin
+        xyz="-0.00249999999999999 -1.61590812403835E-17 1.17671786182075E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.00162138867057304" />
+      <inertia
+        ixx="2.49625856019169E-07"
+        ixy="1.00819144939275E-23"
+        ixz="5.40764150529042E-25"
+        iyy="1.28190821073278E-07"
+        iyz="-8.77822026835157E-23"
+        izz="1.28190821073277E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_gear_j"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.077"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Spur_gear" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Spur_rack1">
+    <inertial>
+      <origin
+        xyz="-0.0636831057761312 0.0228058904998909 -0.0335118083435153"
+        rpy="0 0 0" />
+      <mass
+        value="0.0397845645111195" />
+      <inertia
+        ixx="5.04475177999414E-05"
+        ixy="1.64683468841985E-06"
+        ixz="-2.94988196511606E-06"
+        iyy="2.23831113476059E-05"
+        iyz="1.51780907101343E-06"
+        izz="3.67617732004021E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_rack1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_rack1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_rack1_j"
+    type="prismatic">
+    <origin
+      xyz="-0.00600000000000002 0 0.024"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="Spur_gear" />
+    <child
+      link="Spur_rack1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Spur_rack2">
+    <inertial>
+      <origin
+        xyz="-0.0636831057761313 0.0228058904998909 -0.0335118083435153"
+        rpy="0 0 0" />
+      <mass
+        value="0.0397845645111194" />
+      <inertia
+        ixx="5.04475177999414E-05"
+        ixy="1.64683468841988E-06"
+        ixz="-2.94988196511607E-06"
+        iyy="2.23831113476058E-05"
+        iyz="1.51780907101344E-06"
+        izz="3.6761773200402E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_rack2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_urdf/meshes/Spur_rack2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_rack2_j"
+    type="prismatic">
+    <origin
+      xyz="-0.00600000000000001 0 -0.024"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Spur_gear" />
+    <child
+      link="Spur_rack2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+-->
+</robot>

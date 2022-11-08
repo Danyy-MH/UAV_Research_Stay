@@ -1,0 +1,11 @@
+<launch>
+
+  <node name="dynamic_model_hexarotor" pkg="beginner_tutorials" type="dynamic_model_hexarotor" />
+  <node name="hexa_gazebo_broadcaster" pkg="beginner_tutorials" type="hexa_gazebo_broadcaster" />
+  <node name="pid_control" pkg="beginner_tutorials" type="pid_control" />
+
+  <include file="$(find hexa_urdf)/launch/gazebo.launch" />
+
+  <!-- <node name="ref" pkg="beginner_tutorials" type="ref" />  -->
+
+</launch>
