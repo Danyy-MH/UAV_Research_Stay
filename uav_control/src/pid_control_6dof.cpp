@@ -92,7 +92,7 @@ void get_ref(const geometry_msgs::Twist::ConstPtr& msg) {
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "pid_control");
+    ros::init(argc, argv, "pid_control_6dof");
     ros::NodeHandle n;
 
     // Declare Publishers

@@ -13,30 +13,23 @@ UAV uav = UAV();
 
 float u, v, w, p, q, r;
 
-MatrixXf Phi(6,6); // Operator that allows vector product on 6D
+// Variables definition
 
-MatrixXf M(6,6);
-// PD Gravity compensation values
-
-MatrixXf kp(6,6);
-MatrixXf kd(6,6);
-VectorXf gravity_comp(6);
-
-VectorXf error(6);
-VectorXf error_dot(6);
+float z_ddot, z_real, z_real_dot, z_d, error_z, error_z_dot, kp_z, kd_z, u_aux_z;
+float x_real, x_real_dot, x_d, error_x, error_x_dot, kp_x, kd_x, u_aux_x;
+float y_real, y_real_dot, y_d, error_y, error_y_dot, kp_y, kd_y, u_aux_y;
+float roll, pitch, yaw, roll_des_calculation, pitch_des_calculation, roll_des, pitch_des;
+float U1, tx, ty, tz;
+float roll_real, roll_real_dot, roll_d, error_roll, error_roll_dot, kp_roll, kd_roll, u_aux_roll;
+float pitch_real, pitch_real_dot, pitch_d, error_pitch, error_pitch_dot, kp_pitch, kd_pitch, u_aux_pitch;
+float yaw_real, yaw_real_dot, yaw_d, error_yaw, error_yaw_dot, kp_yaw, kd_yaw, u_aux_yaw;
 
 VectorXf pose_x(6);
 VectorXf pose_x_dot(6);
 
 VectorXf vel(6); // body frame velocities
 
-VectorXf u_fc(6); // feedback controller u
-VectorXf u_aux(6); // auxiliar u
-VectorXf gc(6); // gravity compensation
-
 VectorXf ref(6); // auxiliar u
-VectorXf ref_dot(6); // auxiliar u
-VectorXf ref_ddot(6); // auxiliar u
 
 void get_pose(const geometry_msgs::Twist::ConstPtr& msg) {
 
@@ -92,7 +85,7 @@ void get_ref(const geometry_msgs::Twist::ConstPtr& msg) {
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "pid_control");
+    ros::init(argc, argv, "pid_control_4dof");
     ros::NodeHandle n;
 
     // Declare Publishers
@@ -108,76 +101,159 @@ int main(int argc, char **argv)
     ros::Rate loop_rate(100);
 
     // initial conditons
-    ref_ddot << 0, 0, 0, 0, 0, 0;
-
-    error << 0, 0, 0, 0, 0, 0;
-    error_dot << 0, 0, 0, 0, 0, 0;
 
     pose_x << 0, 0, 0, 0, 0, 0;
     pose_x_dot << 0, 0, 0, 0, 0, 0;
     vel << 0, 0, 0, 0, 0, 0;
     ref << 0, 0, 0, 0, 0, 0;
 
-    gc << 0, 0, -uav.m*uav.g, 0, 0, 0;
-
-    M << uav.m, 0, 0, 0, 0, 0,
-        0, uav.m, 0, 0, 0, 0,
-        0, 0, uav.m, 0, 0, 0,
-        0, 0, 0, uav.Jxx, 0, 0,
-        0, 0, 0, 0, uav.Jyy, 0,
-        0, 0, 0, 0, 0, uav.Jzz;
-
-    kp << 6, 0, 0, 0, 0, 0,
-        0, 4.5, 0, 0, 0, 0,
-        0, 0, 5, 0, 0, 0,
-        0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 1, 0,
-        0, 0, 0, 0, 0, 1;
-
-    kd << 5, 0, 0, 0, 0, 0,
-        0, 4.5, 0, 0, 0, 0,
-        0, 0, 7, 0, 0, 0,
-        0, 0, 0, 0.1, 0, 0,
-        0, 0, 0, 0, 0.1, 0,
-        0, 0, 0, 0, 0, 0.2;
-
     // While loop in ROS node
     //ros::Duration(4).sleep();
     while(ros::ok()) {
 
-        // PD control operations
+        // Postion PD Control
+        // Determine u_uax_z
+        z_ddot = 0;
+        z_real = pose_x(2);
+        z_real_dot = pose_x_dot(2);
+        z_d = ref(2);
 
-        u = vel(0);
-        v = vel(1);
-        w = vel(2);
-        p = vel(3);
-        q = vel(4);
-        r = vel(5);
+        error_z = z_d - z_real;
+        error_z_dot = - z_real_dot;
 
-        Phi << 0, -r, q, 0, -w, v,
-            r, 0, -p , w, 0, -u,
-            -q, p, 0,  -v, u, 0,
-            0, 0, 0, 0, -r, q, 
-            0, 0, 0, r, 0, -p,
-            0, 0, 0, -q, p, 0;
+        kp_z = 7;
+        kd_z = 5;
 
-        error = ref - pose_x;
-        error_dot = -pose_x_dot;
+        u_aux_z = kp_z*error_z + kd_z*error_z_dot; 
 
-        u_aux = kp*error + kd*error_dot + gc;
-        u_fc = M*M.inverse()*Phi*M*vel + u_aux + ref_ddot; 
+         // Determine u_aux_x
+        x_real = pose_x(0);
+        x_real_dot = pose_x_dot(0);
+        x_d = ref(0);
+
+        error_x = x_d - x_real;
+        error_x_dot = - x_real_dot;
+
+        kp_x = 7;
+        kd_x = 5;
+
+        u_aux_x = kp_x*error_x + kd_x*error_x_dot; 
+
+        // Determine u_aux_y
+
+        y_real = pose_x(1);
+        y_real_dot = pose_x_dot(1);
+        y_d = ref(1);
+
+        error_y = y_d - y_real;
+        error_y_dot =  - y_real_dot;
+
+        kp_y = 2;
+        kd_y = 2;
+
+        u_aux_y = kp_y*error_y + kd_y*error_y_dot;
+
+        // Roll and Pitch
+
+        roll = pose_x(3);
+        pitch = pose_x(4);
+        yaw = ref(5);
+
+        // Calculate thrust U1
+
+        U1 = (uav.m/(cos(roll)*cos(pitch)))*(z_ddot - uav.g + u_aux_z);
+
+        // Calculate Roll and Pitch desired
+
+        roll_des_calculation = ((uav.m/U1)*u_aux_x*sin(yaw)) - ((uav.m/U1)*u_aux_y*cos(yaw));
+
+        if (roll_des_calculation > 1)
+        {
+            roll_des_calculation = 1;
+        }
+        else if (roll_des_calculation < -1)
+        {
+            roll_des_calculation = -1;
+        }
+        else
+        {
+            roll_des_calculation = roll_des_calculation;
+        }
+        roll_des = asin(roll_des_calculation);
+        
+        pitch_des_calculation = (((uav.m/U1)*u_aux_x) - (sin(roll_des)*sin(yaw)))/(cos(roll_des)*cos(yaw));
+        if (pitch_des_calculation > 1)
+        {
+            pitch_des_calculation = 1;
+        }
+        else if (pitch_des_calculation < -1)
+        {
+            pitch_des_calculation = -1;
+        }
+        else
+        {
+            pitch_des_calculation = pitch_des_calculation;
+        }
+        pitch_des = asin(pitch_des_calculation);
+        
+        // body frame angular velocites
+
+        // Determine u_aux_roll
+
+        roll_real = pose_x(3);
+        roll_real_dot = pose_x_dot(3);
+        roll_d = roll_des;
+
+        error_roll = roll_d - roll_real;
+        error_roll_dot = - roll_real_dot;
+
+        kp_roll = 20;
+        kd_roll = 5;
+
+        u_aux_roll = kp_roll*error_roll + kd_roll*error_roll_dot;
+        tx = uav.Jxx*((uav.Jzz - uav.Jyy)*pose_x_dot(4)*pose_x_dot(5)/(uav.Jxx) + u_aux_roll);
+
+        // Determine u_aux_pitch
+
+        pitch_real = pose_x(4);
+        pitch_real_dot = pose_x_dot(4);
+        pitch_d = pitch_des;
+
+        error_pitch= pitch_d - pitch_real;
+        error_pitch_dot = - pitch_real_dot;
+
+        kp_pitch = 20;
+        kd_pitch = 5;
+
+        u_aux_pitch = kp_pitch*error_pitch + kd_pitch*error_pitch_dot;
+        ty = uav.Jyy*((uav.Jxx - uav.Jzz)*pose_x_dot(3)*pose_x_dot(5)/(uav.Jyy) + u_aux_pitch);
+
+        // Determine u_aux_yaw
+
+        yaw_real = pose_x(5);
+        yaw_real_dot = pose_x_dot(5);
+        yaw_d = ref(5);
+
+        error_yaw = yaw_d - yaw_real;
+        error_yaw_dot = - yaw_real_dot;
+
+        kp_yaw = 1;
+        kd_yaw = 1;
+
+        u_aux_yaw = kp_yaw*error_yaw + kd_yaw*error_yaw_dot;
+        tz = uav.Jzz*((uav.Jyy - uav.Jxx)*pose_x_dot(3)*pose_x_dot(4)/(uav.Jzz) + u_aux_yaw);
 
         // Create messages
         geometry_msgs::Wrench feedback_forces;
 
 
         // Prepare data to publish message
-        feedback_forces.force.x = u_fc(0);
-        feedback_forces.force.y = u_fc(1);
-        feedback_forces.force.z = u_fc(2);
-        feedback_forces.torque.x = u_fc(3);
-        feedback_forces.torque.y = u_fc(4);
-        feedback_forces.torque.z = u_fc(5);
+        feedback_forces.force.x = 0;
+        feedback_forces.force.y = 0;
+        feedback_forces.force.z = U1;
+        feedback_forces.torque.x = tx;
+        feedback_forces.torque.y = ty;
+        feedback_forces.torque.z = tz;
 
         // Publish messages
         forces_pub.publish(feedback_forces);
