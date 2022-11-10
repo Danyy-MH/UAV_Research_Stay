@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+#Autor: Mizael Beltran Romero
+#Email: elmizabeltran@gmail.com
+#Resumen: Codigo para deteccion de arucos
 import cv2
 import rospy
 import sys
@@ -13,7 +16,7 @@ from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
-
+'''
 class PID:
 
     def __init__(self):
@@ -46,6 +49,7 @@ class PID:
         self.last_ex = ex
         self.last_ey = ey
         self.last_ez = ez
+'''
 
 def IBVS(msg):
     img = bridge.imgmsg_to_cv2(msg,"bgr8")
@@ -102,7 +106,7 @@ def IBVS(msg):
                         errory = 0
                         errorz = 0
             error.publish(errorx,errory,errorz)
-            pid.control(errorx,errory,errorz)
+            #pid.control(errorx,errory,errorz)
             #print(corners)
             img = aruco.drawDetectedMarkers(img, corners, ids)
             cv2.rectangle(img,(340,340),(460,460),(255,0,255),thickness=2)
@@ -122,5 +126,5 @@ rospy.Subscriber("/camera/image_raw",Image,IBVS)
 
 
 
-pid = PID()
+#pid = PID()
 rospy.spin()
