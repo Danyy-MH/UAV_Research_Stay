@@ -162,9 +162,10 @@ int main(int argc, char **argv)
             0, 0, 0, -q, p, 0;
 
         error = ref - pose_x;
-        error_dot = -pose_x_dot;
+        error_dot = - pose_x_dot;
 
         u_aux = kp*error + kd*error_dot + gc;
+        // u feedback control 
         u_fc = M*M.inverse()*Phi*M*vel + u_aux + ref_ddot; 
 
         // Create messages

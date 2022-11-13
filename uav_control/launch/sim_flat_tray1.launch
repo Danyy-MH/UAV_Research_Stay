@@ -1,0 +1,10 @@
+<launch>
+
+  <node name="hexa_6dof_dynamics" pkg="uav_control" type="hexa_6dof_dynamics" />
+  <node name="gazebo_broadcaster" pkg="uav_control" type="gazebo_broadcaster" />
+  <node name="pid_control_4dof" pkg="uav_control" type="pid_control_4dof" />
+
+  <include file="$(find Hexa_nov_V2)/launch/gazebo.launch" />
+  <!-- <include file="$(find mavros)/launch/hexa_px4.launch" /> -->
+
+</launch>

@@ -134,8 +134,8 @@ int main(int argc, char **argv)
         error_x = x_d - x_real;
         error_x_dot = - x_real_dot;
 
-        kp_x = 7;
-        kd_x = 5;
+        kp_x = 2;
+        kd_x = 2;
 
         u_aux_x = kp_x*error_x + kd_x*error_x_dot; 
 
@@ -222,8 +222,8 @@ int main(int argc, char **argv)
         error_pitch= pitch_d - pitch_real;
         error_pitch_dot = - pitch_real_dot;
 
-        kp_pitch = 20;
-        kd_pitch = 5;
+        kp_pitch = 10;
+        kd_pitch = 2;
 
         u_aux_pitch = kp_pitch*error_pitch + kd_pitch*error_pitch_dot;
         ty = uav.Jyy*((uav.Jxx - uav.Jzz)*pose_x_dot(3)*pose_x_dot(5)/(uav.Jyy) + u_aux_pitch);

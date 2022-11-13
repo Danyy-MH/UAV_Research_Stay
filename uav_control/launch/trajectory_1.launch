@@ -5,6 +5,7 @@
   <node name="pid_control_6dof" pkg="uav_control" type="pid_control_6dof" />
 
   <include file="$(find hexa_urdf)/launch/gazebo.launch" />
+  <!-- <include file="$(find mavros)/launch/hexa_px4.launch" /> -->
 
   <node name="trajectory_1" pkg="uav_control" type="trajectory_1" />
 

@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	gazebo_msgs::ModelState states;
 	ros::Publisher gazebo_pub = n.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state",10);
 
-	states.model_name = "hexa_urdf";
+	states.model_name = "Hexa_nov_V2";
 	tf2::Quaternion myQuaternion;
 	tf2::Quaternion q;
 	tf2::Quaternion q_rot;

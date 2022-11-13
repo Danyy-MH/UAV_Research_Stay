@@ -38,3 +38,7 @@ add_dependencies(trajectory_1 uav_control_generate_messages_cpp)
 add_executable(gazebo_broadcaster src/gazebo_broadcaster.cpp)
 target_link_libraries(gazebo_broadcaster ${catkin_LIBRARIES})
 add_dependencies(gazebo_broadcaster uav_control_generate_messages_cpp)
+
+add_executable(px4_communication src/px4_communication.cpp)
+target_link_libraries(px4_communication ${catkin_LIBRARIES})
+add_dependencies(px4_communication uav_control_generate_messages_cpp)
