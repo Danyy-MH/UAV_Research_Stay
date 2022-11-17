@@ -1,0 +1,437 @@
+<sdf version='1.7'>
+  <model name='Hexa_nov_V2'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.001026 -0.018805 0.005086 0 -0 0</pose>
+        <mass>1.67991</mass>
+        <inertia>
+          <ixx>0.00257193</ixx>
+          <ixy>1.67069e-09</ixy>
+          <ixz>-3.5543e-08</ixz>
+          <iyy>0.00467567</iyy>
+          <iyz>-6.41266e-08</iyz>
+          <izz>0.0025903</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name='Propeller1-j' type='revolute'>
+      <pose relative_to='base_link'>-0.25512 1.5e-05 0.032508 1.5708 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Propeller1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller1'>
+      <pose relative_to='Propeller1-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004397 -1e-06 0 -0 0</pose>
+        <mass>0.00751264</mass>
+        <inertia>
+          <ixx>1.7431e-05</ixx>
+          <ixy>1.49425e-11</ixy>
+          <ixz>-1.55538e-06</ixz>
+          <iyy>1.77031e-05</iyy>
+          <iyz>2.91143e-11</iyz>
+          <izz>3.33965e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+
+    <joint name='Propeller2-j' type='revolute'>
+      <pose relative_to='base_link'>0.25512 -1.5e-05 0.032508 1.5708 0 -0.47125</pose>
+      <parent>base_link</parent>
+      <child>Propeller2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller2'>
+      <pose relative_to='Propeller2-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004396 -1e-06 0 -0 0</pose>
+        <mass>0.00751225</mass>
+        <inertia>
+          <ixx>1.74308e-05</ixx>
+          <ixy>1.48985e-11</ixy>
+          <ixz>-1.55518e-06</ixz>
+          <iyy>1.77029e-05</iyy>
+          <iyz>1.71765e-11</iyz>
+          <izz>3.33911e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Propeller3-j' type='revolute'>
+      <pose relative_to='base_link'>0.12755 -0.22095 0.032508 1.5708 -0 -0.23418</pose>
+      <parent>base_link</parent>
+      <child>Propeller3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller3'>
+      <pose relative_to='Propeller3-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004396 -1e-06 0 -0 0</pose>
+        <mass>0.00751232</mass>
+        <inertia>
+          <ixx>1.74309e-05</ixx>
+          <ixy>1.49375e-11</ixy>
+          <ixz>-1.55516e-06</ixz>
+          <iyy>1.7703e-05</iyy>
+          <iyz>2.87278e-11</iyz>
+          <izz>3.3391e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Propeller4-j' type='revolute'>
+      <pose relative_to='base_link'>-0.12755 0.22095 0.032508 1.5708 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Propeller4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller4'>
+      <pose relative_to='Propeller4-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004397 -1e-06 0 -0 0</pose>
+        <mass>0.00751263</mass>
+        <inertia>
+          <ixx>1.7431e-05</ixx>
+          <ixy>1.49387e-11</ixy>
+          <ixz>-1.55538e-06</ixz>
+          <iyy>1.77031e-05</iyy>
+          <iyz>2.94871e-11</iyz>
+          <izz>3.33965e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Propeller5-j' type='revolute'>
+      <pose relative_to='base_link'>-0.12757 -0.22093 0.032508 1.5708 -0 0.149</pose>
+      <parent>base_link</parent>
+      <child>Propeller5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller5'>
+      <pose relative_to='Propeller5-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004397 0 0 -0 0</pose>
+        <mass>0.00751259</mass>
+        <inertia>
+          <ixx>1.74304e-05</ixx>
+          <ixy>1.4973e-11</ixy>
+          <ixz>-1.55538e-06</ixz>
+          <iyy>1.77025e-05</iyy>
+          <iyz>4.0069e-11</iyz>
+          <izz>3.33965e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Propeller6-j' type='revolute'>
+      <pose relative_to='base_link'>0.12758 0.22093 0.032508 1.5708 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Propeller6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Propeller6'>
+      <pose relative_to='Propeller6-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.004397 -1e-06 0 -0 0</pose>
+        <mass>0.00751263</mass>
+        <inertia>
+          <ixx>1.74309e-05</ixx>
+          <ixy>1.49385e-11</ixy>
+          <ixz>-1.55538e-06</ixz>
+          <iyy>1.77031e-05</iyy>
+          <iyz>2.91074e-11</iyz>
+          <izz>3.33965e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='Propeller6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Propeller6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Propeller6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Spur-rack1-j' type='prismatic'>
+      <pose relative_to='base_link'>-0.07 -0.024 -0.083 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Spur-rack1</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Spur-rack1'>
+      <pose relative_to='Spur-rack1-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.006317 0.022806 -0.033512 0 -0 0</pose>
+        <mass>0.0397846</mass>
+        <inertia>
+          <ixx>5.04475e-05</ixx>
+          <ixy>1.64683e-06</ixy>
+          <ixz>-2.94988e-06</ixz>
+          <iyy>2.23831e-05</iyy>
+          <iyz>1.51781e-06</iyz>
+          <izz>3.67618e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Spur-rack1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Spur-rack1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Spur-rack1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Spur-rack1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Spur-rack2-j' type='prismatic'>
+      <pose relative_to='base_link'>0.07 0.024 -0.083 0 0 -3.14159</pose>
+      <parent>base_link</parent>
+      <child>Spur-rack2</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Spur-rack2'>
+      <pose relative_to='Spur-rack2-j'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.006317 0.022806 -0.033512 0 -0 0</pose>
+        <mass>0.0397846</mass>
+        <inertia>
+          <ixx>5.04475e-05</ixx>
+          <ixy>1.64683e-06</ixy>
+          <ixz>-2.94988e-06</ixz>
+          <iyy>2.23831e-05</iyy>
+          <iyz>1.51781e-06</iyz>
+          <izz>3.67618e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Spur-rack2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Spur-rack2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Spur-rack2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Hexa_nov_V2/meshes/Spur-rack2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

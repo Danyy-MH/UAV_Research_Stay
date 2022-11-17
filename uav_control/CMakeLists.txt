@@ -13,7 +13,11 @@ generate_messages(DEPENDENCIES std_msgs)
 
 ## Declare a catkin package
 catkin_package(
-    CATKIN_DEPENDS geometry_msgs
+    CATKIN_DEPENDS geometry_msgs roscpp rospy
+)
+
+catkin_install_python(PROGRAMS src/waypoints.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Build talker and listener
@@ -42,3 +46,7 @@ add_dependencies(gazebo_broadcaster uav_control_generate_messages_cpp)
 add_executable(px4_communication src/px4_communication.cpp)
 target_link_libraries(px4_communication ${catkin_LIBRARIES})
 add_dependencies(px4_communication uav_control_generate_messages_cpp)
+
+add_executable(offb_node src/offb_node.cpp)
+target_link_libraries(offb_node ${catkin_LIBRARIES})
+add_dependencies(offb_node uav_control_generate_messages_cpp)

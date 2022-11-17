@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="waypoints" pkg="uav_control" type="waypoints.py" />
+  <node name="offb_node" pkg="uav_control" type="offb_node" />
+  <include file="$(find mavros)/launch/px4.launch" />
+
+</launch>
