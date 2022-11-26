@@ -1,4 +1,3 @@
-<!-- DO NOT EDIT: Generated from iris.sdf.jinja -->
 <sdf version='1.5'>
   <model name='hexaflat'>
     <link name='base_link'>
@@ -689,7 +688,7 @@
     </plugin>
 
 
-    
+
     <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
       <robotNamespace/>
       <pubRate>50</pubRate>
