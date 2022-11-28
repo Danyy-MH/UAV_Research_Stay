@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hexa_Nov_V3_2022">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Propeller1">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller1"
+    type="continuous">
+    <origin
+      xyz="-0.12757247787632 -0.220931255442771 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller2">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller2"
+    type="continuous">
+    <origin
+      xyz="-0.255118318641588 1.5378943236248E-05 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller3">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller3"
+    type="continuous">
+    <origin
+      xyz="-0.127545840765268 0.220946634386007 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller4">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller4"
+    type="continuous">
+    <origin
+      xyz="0.127580369515376 0.220925411722318 0.0325079324936686"
+      rpy="1.5707963267949 0 0.0353318344323685" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller5">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller5"
+    type="continuous">
+    <origin
+      xyz="0.255118318641588 -1.53789432341404E-05 0.0325079324936686"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller5" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Propeller6">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Propeller6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Propeller6"
+    type="continuous">
+    <origin
+      xyz="0.12755 -0.22095 0.032508"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Propeller6" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Spur_gear">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_gear"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.077"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Spur_gear" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Spur_rack1">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_rack1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_rack1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_rack1"
+    type="prismatic">
+    <origin
+      xyz="-0.00600000000000002 0 0.024"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="Spur_gear" />
+    <child
+      link="Spur_rack1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Spur_rack2">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_rack2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/Spur_rack2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Spur_rack2"
+    type="prismatic">
+    <origin
+      xyz="-0.00600000000000001 0 -0.024"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Spur_gear" />
+    <child
+      link="Spur_rack2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0.000617032334799983 -0.014176503033333 0.00272954082733906"
+        rpy="0 0 0" />
+      <mass
+        value="2.04" />
+      <inertia
+        ixx="0.0277228919525897"
+        ixy="-3.89874907074365E-05"
+        ixz="-9.46362948208474E-05"
+        iyy="0.0479071604257754"
+        iyz="-0.000257292209476455"
+        izz="0.0267526671506882" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexa_Nov_V3_2022/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.085325 -0.04"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
