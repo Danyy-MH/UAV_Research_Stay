@@ -23,5 +23,8 @@ PX4-Autopilot/Tools/simulation/gazebo/sitl_gazebo/models/hexaflat/model.config
 Agregar hexaflat.world en la siguiente dirección:
 PX4-Autopilot/Tools/simulation/gazebo/sitl_gazebo/worlds
 
+Agregar la carpeta carga_util en el siguieten path:
+PX4-Autopilot/Tools/simulation/gazebo/sitl_gazebo/models
+
 La simulación se corre con:
 make px4_sitl gazebo_hexaflat
