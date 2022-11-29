@@ -9,11 +9,11 @@ current_wp = 0
 
 ## List of waypoints
 ## xyz NED frame and quaternions xyzw(Gazebo)
-waypoints = [[0, 0, 1, 0, 0, 0, 0],
-             [0, 3, 1, 0, 0, 0, 0],
-             [3, 3, 1, 0, 0, 0, 0],
-             [3, 0, 1, 0, 0, 0, 0],
-             [0, 0, 1, 0, 0, 0, 0],]
+waypoints = [[0, 0, 1.5, 0, 0, 0, 0],
+             [5, 0, 1.5, 0, 0, 0, 0],
+             [5, 0, 1, 0, 0, 0, 0],
+             [5, 0, 1.5, 0, 0, 0, 0],
+             [0, 0, 1.5, 0, 0, 0, 0],]
 
 ## Calculate distance between current distance and waypoint
 def get_distance(pointA, pointB):

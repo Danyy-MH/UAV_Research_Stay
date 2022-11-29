@@ -331,6 +331,9 @@
         </geometry>
       </visual>
     </link>
+
+
+    
     <joint name='Spur-rack1-j' type='prismatic'>
       <pose relative_to='base_link'>-0.07 -0.024 -0.083 0 -0 0</pose>
       <parent>base_link</parent>
