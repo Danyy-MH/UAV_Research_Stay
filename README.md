@@ -5,6 +5,10 @@ simulation_4dof_tray1.launch lanza una simulación en Gazebo, es necesario manda
  
 ## Simulación en PX4 SITL con custom model
 
+### Clonar PX4-Autopilot 
+
+https://github.com/PX4/PX4-Autopilot.git
+
 Agregar 3012_hexaflat textualmente en el archivo CMakeLists.txt en la dirección:
 PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/CMakeLists.txt 
 en la función px4_add_romfs_files(
