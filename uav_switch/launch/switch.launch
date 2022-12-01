@@ -1,0 +1,12 @@
+<launch>
+  <!--Nodo para el visual servoing-->
+  <node name="IBVS" pkg="uav_ibvs" type="arucos.py" output="screen"/>
+  <!--Nodo para ir al objetivo(waypoints)-->
+  <node name="Waypoints" pkg="uav_control" type="waypoints.py" output="screen"/>
+  <!--Nodo para controlar el modo del UAV-->
+  <node name="Switch" pkg="uav_switch" type="switch.py" output="screen"/>
+  <!--Nodo para activar el offboard-->
+  <node name="Offboard" pkg="uav_control" type="off_node" output="screen"/>
+
+  
+</launch>
