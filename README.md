@@ -32,3 +32,11 @@ PX4-Autopilot/Tools/simulation/gazebo/sitl_gazebo/models
 
 La simulación se corre con:
 make px4_sitl gazebo_hexaflat
+
+Simulacion con roslaunch: 
+Dentro del directorio de PX4-Autopilot correr:
+
+source Tools/simulation/gazebo/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo/sitl_gazebo
+roslaunch px4 mavros_posix_sitl.launch
