@@ -5,7 +5,7 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.001 0 -0.009 0 0 0</pose>
-        <mass>1.7971</mass>
+        <mass>2.04</mass>
         <inertia>
           <ixx>0.0244</ixx>
           <ixy>0</ixy>
@@ -15,12 +15,14 @@
           <izz>0.0235</izz>
         </inertia>
       </inertial>
+      <!--
       <collision name='base_link_collision'>
         <pose>0 0 0.0 0 0 0</pose>
         <geometry>
-          <box>
-            <size>0.6 0.6 0.38</size>
-          </box>
+          <<mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://hexaflat/meshes/base_link.stl</uri>
+          </mesh>>
         </geometry>
         <surface>
           <contact>
@@ -34,6 +36,7 @@
           </friction>
         </surface>
       </collision>
+      -->
       <visual name='base_link_visual'>
         <pose>0 0 0 0 0 1.57079</pose>
         <geometry>
@@ -53,14 +56,16 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    
+
+
+
     <include>
       <uri>model://fpv_cam</uri>
       <pose>0.085325 0 -0.04 0 1.57 0</pose>
     </include>
     <joint name="fpv_cam_joint" type="fixed">
       <child>fpv_cam::link</child>
-      <parent>iris::base_link</parent>
+      <parent>base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -69,7 +74,8 @@
         </limit>
       </axis>
     </joint>
-    
+
+
     <include>
       <uri>model://imu</uri>
       <pose>0 0 0 0 0 0</pose>
@@ -97,7 +103,7 @@
 
 
     <link name='rotor_3'>
-      <pose>0.22 0.13 0.00325 0 0 0</pose>
+      <pose>0.22 0.13 0.0325 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
@@ -128,7 +134,7 @@
         </surface>
       </collision>
       <visual name='rotor_3_visual'>
-        <pose>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -203,7 +209,7 @@
         </surface>
       </collision>
       <visual name='rotor_0_visual'>
-        <pose>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -278,7 +284,7 @@
         </surface>
       </collision>
       <visual name='rotor_4_visual'>
-        <pose relative_to='rotor_4'>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -353,7 +359,7 @@
         </surface>
       </collision>
       <visual name='rotor_1_visual'>
-        <pose>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -428,7 +434,7 @@
         </surface>
       </collision>
       <visual name='rotor_5_visual'>
-        <pose>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -503,7 +509,7 @@
         </surface>
       </collision>
       <visual name='rotor_2_visual'>
-        <pose>0 -0.1016 0 0 0 0</pose>
+        <pose>-0.016 -0.1066 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -543,6 +549,129 @@
         </ode>
       </physics>
     </joint>
+
+
+
+    <link name='Spur-rack1'>
+      <pose relative_to='base_link'>0.024 -0.07 -0.083 0 0 1.57079</pose>
+      <inertial>
+        <pose>0.006317 0.022806 -0.033512 0 -0 0</pose>
+        <mass>0.0397846</mass>
+        <inertia>
+          <ixx>5.04475e-05</ixx>
+          <ixy>1.64683e-06</ixy>
+          <ixz>-2.94988e-06</ixz>
+          <iyy>2.23831e-05</iyy>
+          <iyz>1.51781e-06</iyz>
+          <izz>3.67618e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Spur-rack1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaflat/meshes/Spur-rack1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Spur-rack1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaflat/meshes/Spur-rack1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='Spur-rack1-j' type='prismatic'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>Spur-rack1</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+
+
+    <link name='Spur-rack2'>
+      <pose relative_to='base_link'>-0.024 0.07 -0.083 0 0 -1.57079</pose>
+      <inertial>
+        <pose>0.006317 0.022806 -0.033512 0 -0 0</pose>
+        <mass>0.0397846</mass>
+        <inertia>
+          <ixx>5.04475e-05</ixx>
+          <ixy>1.64683e-06</ixy>
+          <ixz>-2.94988e-06</ixz>
+          <iyy>2.23831e-05</iyy>
+          <iyz>1.51781e-06</iyz>
+          <izz>3.67618e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Spur-rack2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaflat/meshes/Spur-rack1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Spur-rack2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaflat/meshes/Spur-rack1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='Spur-rack2-j' type='prismatic'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>Spur-rack2</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+
+
 
     <include>
       <uri>model://sonar</uri>
