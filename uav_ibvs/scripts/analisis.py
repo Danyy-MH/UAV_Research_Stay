@@ -19,6 +19,7 @@ def translacion(msg):
 
 def velocidad(msg):
     velx.append(msg.linear.x)
+    vely.append(msg.linear.y)
     v.append(next(index3))
 
 
@@ -33,12 +34,13 @@ transx = []
 transy = []
 transz = []
 velx = []
+vely = []
 rotx = []
 roty = []
 rotz = []
 rospy.Subscriber("posicion/rotacion", Point, rotacion, queue_size=10) 
 rospy.Subscriber("posicion/translacion", Point, translacion, queue_size=10) 
-rospy.Subscriber("mavros/setpoint_velocity/cmd_vel", Twist, velocidad)
+rospy.Subscriber("mavros/setpoint_velocity/cmd_vel_unstamped", Twist, velocidad)
 
 while not rospy.is_shutdown(): # run the node until Ctrl-C is pressed
     '''fig, (ax1,ax2) = plt.subplots(1,2)
@@ -53,7 +55,15 @@ while not rospy.is_shutdown(): # run the node until Ctrl-C is pressed
     ax2.plot(r,rotz, label = "Z")
     ax2.legend()
     ax2.set_title("Rotacion")'''
-    plt.plot(v,velx,label = "X")
+    plt.plot(v,velx)
+    plt.title('Velocidad en X')
+    plt.xlabel('Tiempo')
+    plt.ylabel('Velocidad')
+    plt.show()
+    plt.plot(v,vely)
+    plt.title('Velocidad en Y')
+    plt.xlabel('Tiempo')
+    plt.ylabel('Velocidad')
     plt.show()
 	
 	#rate.sleep() # This makes the loop to iterate at 10Hz i.e., 10 times a sec
