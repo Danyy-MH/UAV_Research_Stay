@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(Hexa_nov_V2)
+project(hexa_nov_v2)
 
 find_package(catkin REQUIRED)
 
