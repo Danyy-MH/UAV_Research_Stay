@@ -10,10 +10,16 @@ current_wp = 0
 ## List of waypoints
 ## xyz NED frame and quaternions xyzw(Gazebo)
 waypoints = [[0, 0, 1.5, 0, 0, 0, 0],
-             [5, 0, 1.5, 0, 0, 0, 0],
-             [5, 0, 1, 0, 0, 0, 0],
-             [5, 0, 1.5, 0, 0, 0, 0],
+             [3, 0, 1.5, 0, 0, 0, 0],
+             [3, 3, 1.5, 0, 0, 0, 0],
+             [0, 3, 1, 0, 0, 0, 0],
+             [0, 0, 1.5, 0, 0, 0, 0],
              [0, 0, 1.5, 0, 0, 0, 0],]
+
+# waypoints = [[25.652828, -100.286169, 1.5, 0, 0, 0, 0],
+#              [25.6528276, -100.2861094, 1.5, 0, 0, 0, 0],
+#              [25.6528651, -100.2861087, 1.5, 0, 0, 0, 0],
+#              [25.652828, -100.286169, 1.5, 0, 0, 0, 0]]
 
 ## Calculate distance between current distance and waypoint
 def get_distance(pointA, pointB):
@@ -31,9 +37,10 @@ def get_pose(data):
         #rospy.sleep(1)
         current_wp = current_wp + 1
         #rospy.loginfo("Reached goal " + str(current_wp+1) + ", moving to next")
-    if current_wp == len(waypoints)-1:
+    # if current_wp == len(waypoints)-1:
         #rospy.sleep(3)
-        current_wp = 0
+
+        # current_wp = 0
 
 def ref_pub():
     rospy.init_node("ref_pub", anonymous = False)

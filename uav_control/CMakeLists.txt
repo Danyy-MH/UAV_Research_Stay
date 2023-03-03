@@ -50,3 +50,7 @@ add_dependencies(px4_communication uav_control_generate_messages_cpp)
 add_executable(offb_node src/offb_node.cpp)
 target_link_libraries(offb_node ${catkin_LIBRARIES})
 add_dependencies(offb_node uav_control_generate_messages_cpp)
+
+# add_executable(offb_node_gps src/offb_node_gps.cpp)
+# target_link_libraries(offb_node_gps ${catkin_LIBRARIES})
+# add_dependencies(offb_node_gps uav_control_generate_messages_cpp)
