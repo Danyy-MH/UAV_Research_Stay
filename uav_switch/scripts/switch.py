@@ -30,11 +30,14 @@ class Switch():
             wp_pub.publish(0)
             aruco_pub.publish("Activada")
         if(self.nodo == "arucos" and self.aruco == "Centrado"):
+            aruco_pub.publish("Desactivada")
+            land_pub.publish(1)
+            time.sleep(10)
             print("Cambiando de vs a wp")
             self.nodo = "waypoints"
-            aruco_pub.publish("Desactivada")
+            land_pub.publish(0)
             wp_pub.publish(1)
-            time.sleep(10)
+            #time.sleep(10)
 
 
 switch = Switch()
@@ -44,6 +47,7 @@ rospy.Subscriber("aruco",String,switch.get_aruco)
 rospy.Subscriber("waypoint",Int64,switch.get_waypoint)
 aruco_pub = rospy.Publisher("ibvs/camera_state",String,queue_size=10)
 wp_pub = rospy.Publisher("wp/state", Int64, queue_size=10)
+land_pub = rospy.Publisher("land",Int64, queue_size=10)
 while not rospy.is_shutdown():
     switch.control()
 
