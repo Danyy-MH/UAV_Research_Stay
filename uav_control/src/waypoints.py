@@ -12,7 +12,7 @@ current_wp = 0
 waypoints = [[0, 0, 1.5, 0, 0, 0, 0],
              [3, 0, 1.5, 0, 0, 0, 0],
              [3, 3, 1.5, 0, 0, 0, 0],
-             [0, 3, 1, 0, 0, 0, 0],
+             [0, 3, 1.5, 0, 0, 0, 0],
              [0, 0, 1.5, 0, 0, 0, 0],
              [0, 0, 1.5, 0, 0, 0, 0],]
 
@@ -24,7 +24,7 @@ waypoints = [[0, 0, 1.5, 0, 0, 0, 0],
 ## Calculate distance between current distance and waypoint
 def get_distance(pointA, pointB):
     distance = sqrt((pointA[0] - pointB[0])**2 + (pointA[1] - pointB[1])**2 + (pointA[2] - pointB[2])**2)
-    return distance
+    |urn distance
 
 def get_pose(data):
     global current_wp
