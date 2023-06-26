@@ -1,7 +1,7 @@
 #include <math.h>
 #include <ros/ros.h>
 #include <UAV.hpp>
-#include <geometry_msgs/Twist.h>
+#include <geometry_msgs/TwistStamped.h>
 #include "gazebo_msgs/ModelState.h"
 #include <tf2/LinearMath/Quaternion.h>
 
@@ -11,14 +11,14 @@ UAV uav = UAV();
 
 VectorXf pose_x(6);
 
-void get_pose(const geometry_msgs::Twist::ConstPtr& msg)
+void get_pose(const geometry_msgs::TwistStamped::ConstPtr& msg)
 {
-	pose_x(0) = msg -> linear.x;
-    pose_x(1) = msg -> linear.y;
-    pose_x(2) = msg -> linear.z;
-    pose_x(3) = msg -> angular.x;
-    pose_x(4) = msg -> angular.y;
-    pose_x(5) = msg -> angular.z;
+	pose_x(0) = msg -> twist.linear.x;
+    pose_x(1) = msg -> twist.linear.y;
+    pose_x(2) = msg -> twist.linear.z;
+    pose_x(3) = msg -> twist.angular.x;
+    pose_x(4) = msg -> twist.angular.y;
+    pose_x(5) = msg -> twist.angular.z;
 }
 
 int main(int argc, char** argv)
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	gazebo_msgs::ModelState states;
 	ros::Publisher gazebo_pub = n.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state",10);
 
-	states.model_name = "Hexa_nov_V2";
+	states.model_name = "hexa_urdf";
 	tf2::Quaternion myQuaternion;
 	tf2::Quaternion q;
 	tf2::Quaternion q_rot;
@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 	//ros::Duration(4).sleep();
 	while(ros::ok())
 	{
-		
+		// euler angles to quaternion
 		myQuaternion.setRPY(pose_x(3), pose_x(4),pose_x(5));
 		q_rot.setRPY(0,0,0);
 		q = q_rot * myQuaternion;
